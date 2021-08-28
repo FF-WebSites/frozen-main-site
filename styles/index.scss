@@ -223,7 +223,7 @@ section {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-left: 24px;
+      margin-left: auto;
       .iconify {
         color: #fff;
         font-size: 14px;
@@ -246,7 +246,9 @@ section {
         // background-color: var(--theme-blue);
       }
     }
-
+    @media screen and (max-width:992px) {
+      width: 100%;
+    }
     @media screen and (min-width: 1200px) {
       margin-top: 40px;
     }
@@ -266,6 +268,7 @@ section {
       margin-left: auto;
       margin-right: auto;
       border-radius: 50px;
+      z-index: 24;
       @media screen and (min-width: 992px) {
         left: 90px;
         top: 70px;
@@ -292,6 +295,7 @@ section {
       bottom: 20px;
       left: 50%;
       transform: translate(-50%);
+      z-index: 25;
       @media screen and (min-width: 992px) {
         transform: initial;
         height: 400px;
@@ -313,6 +317,7 @@ section {
       right: -25px;
       top: 35px;
       height: 100px;
+      z-index: 25;
       @media screen and (min-width: 1200px) {
         height: initial;
         right: -77px;
@@ -431,18 +436,32 @@ section {
       align-items: center;
     }
   }
-  .investors-btn {
+  .dropdown{
+    &-menu{
+      width: 70%;
+      @media screen and (max-width:992px) {
+        width: 100%;
+        color: var(--theme-black);
+      }
+    }
+  }
+  &-btn {
     display: flex;
     align-items: center;
     background-color: var(--theme-blue);
     height: 69px;
     width: 70%;
+    border: none;
     border-radius: 6px;
     color: #fff;
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
     padding: 0 17px 0 28px;
+    transition: 300ms all;
+    &::after{
+      display: none;
+    }
     .icon-box {
       height: 38px;
       width: 38px;
@@ -453,10 +472,17 @@ section {
       justify-content: center;
       align-items: center;
       margin-left: auto;
+      
       .iconify {
         color: #fff;
         font-size: 14px;
       }
+    }
+    &:hover{
+      background-color: darken($color: #0873c0, $amount: 10);
+    }
+    @media screen and (max-width: 992px) {
+      width: 100% !important;
     }
     &-text {
     }
@@ -476,9 +502,11 @@ section {
       margin-right: auto;
       margin-top: 50px;
       border-radius: 50px;
+      z-index: 24;
       @media screen and (min-width: 992px) {
         border-radius: 100px;
         position: absolute;
+        z-index: 24;
         margin: 0;
         width: 40%;
         right: 50px;
@@ -504,6 +532,7 @@ section {
       }
     }
     .imgHuman {
+      z-index: 25;
       position: absolute;
       height: 325px;
       bottom: 25px;
@@ -527,6 +556,7 @@ section {
       right: 0;
       height: 70px;
       bottom: 200px;
+      z-index: 25;
       @media screen and (min-width: 992px) {
         height: 100px;
         top: 225px;

@@ -295,7 +295,7 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 24px;
+  margin-left: auto;
 }
 
 #homePage .home-btn .icon-box .iconify {
@@ -321,6 +321,12 @@ section {
   width: 48px;
 }
 
+@media screen and (max-width: 992px) {
+  #homePage .home-btn {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   #homePage .home-btn {
     margin-top: 40px;
@@ -344,6 +350,7 @@ section {
   margin-left: auto;
   margin-right: auto;
   border-radius: 50px;
+  z-index: 24;
 }
 
 @media screen and (min-width: 992px) {
@@ -381,6 +388,7 @@ section {
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
+  z-index: 25;
 }
 
 @media screen and (min-width: 992px) {
@@ -413,6 +421,7 @@ section {
   right: -25px;
   top: 35px;
   height: 100px;
+  z-index: 25;
 }
 
 @media screen and (min-width: 1200px) {
@@ -564,7 +573,18 @@ section {
   }
 }
 
-.investors .investors-btn {
+.investors .dropdown-menu {
+  width: 70%;
+}
+
+@media screen and (max-width: 992px) {
+  .investors .dropdown-menu {
+    width: 100%;
+    color: var(--theme-black);
+  }
+}
+
+.investors-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -574,15 +594,22 @@ section {
   background-color: var(--theme-blue);
   height: 69px;
   width: 70%;
+  border: none;
   border-radius: 6px;
   color: #fff;
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
   padding: 0 17px 0 28px;
+  -webkit-transition: 300ms all;
+  transition: 300ms all;
 }
 
-.investors .investors-btn .icon-box {
+.investors-btn::after {
+  display: none;
+}
+
+.investors-btn .icon-box {
   height: 38px;
   width: 38px;
   -webkit-transition: 400ms all;
@@ -601,9 +628,19 @@ section {
   margin-left: auto;
 }
 
-.investors .investors-btn .icon-box .iconify {
+.investors-btn .icon-box .iconify {
   color: #fff;
   font-size: 14px;
+}
+
+.investors-btn:hover {
+  background-color: #06568f;
+}
+
+@media screen and (max-width: 992px) {
+  .investors-btn {
+    width: 100% !important;
+  }
 }
 
 .investors .investors-images .imgBgBox {
@@ -620,12 +657,14 @@ section {
   margin-right: auto;
   margin-top: 50px;
   border-radius: 50px;
+  z-index: 24;
 }
 
 @media screen and (min-width: 992px) {
   .investors .investors-images .imgBgBox {
     border-radius: 100px;
     position: absolute;
+    z-index: 24;
     margin: 0;
     width: 40%;
     right: 50px;
@@ -659,6 +698,7 @@ section {
 }
 
 .investors .investors-images .imgHuman {
+  z-index: 25;
   position: absolute;
   height: 325px;
   bottom: 25px;
@@ -695,6 +735,7 @@ section {
   right: 0;
   height: 70px;
   bottom: 200px;
+  z-index: 25;
 }
 
 @media screen and (min-width: 992px) {
